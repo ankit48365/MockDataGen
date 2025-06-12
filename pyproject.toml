@@ -1,0 +1,10 @@
+[project]
+name = "mockdatagen"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faker>=37.4.0",
+    "pandas>=2.3.0",
+]
