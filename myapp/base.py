@@ -1,9 +1,10 @@
 from faker import Faker
 from tabulate import tabulate
 import pandas as pd
+import random
+
 
 fake = Faker()
-
 
 def generate_user_data(num_of_records: int) -> pd.DataFrame:
     
@@ -24,37 +25,55 @@ def generate_user_data(num_of_records: int) -> pd.DataFrame:
 
     return user_df
 
-def print_user_data(records_to_process: int) -> None:
-    user_df = generate_user_data(records_to_process)
-    print(tabulate(user_df, headers='keys', tablefmt='psql', showindex=False)) # grid
+# def print_user_data(records_to_process: int) -> None:
+#     user_df = generate_user_data(records_to_process)
+#     print(tabulate(user_df, headers='keys', tablefmt='psql', showindex=False)) # grid
 
-def csv_user_data(records_to_process: int, filename: str = "user_data.csv") -> pd.DataFrame:
+def csv_user_data(records_to_process: int, show_output: str, filename: str = "Data_Set_1.csv") -> pd.DataFrame:
     user_df = generate_user_data(records_to_process)
+    user_df["Original"] = "Y" # Mark original records, this helps us later to identify the original records
     user_df.to_csv(filename, index=False)
     print(f"User data saved to {filename}")
+    if show_output == "Y":
+        print(tabulate(user_df, headers='keys', tablefmt='psql', showindex=False)) # grid
+    else:
+        print("Data not printed, only saved to CSV.")
     return user_df
 
-def mdm_split_data_set(records_to_process: int) -> None:
-    user_df = csv_user_data(records_to_process)
+def mdm_split_data_set(records_to_process: int, show_output: str) -> None:
+    user_df = csv_user_data(records_to_process, show_output)
     df_20 = user_df.sample(frac=0.2, random_state=42)  # Pick 20% randomly
     df_80 = user_df.drop(df_20.index)  # Remaining 80%  , droping the one used in df_20
-    df_20.to_csv("user_data_20.csv", index=False)
-    df_80.to_csv("user_data_80.csv", index=False)
+    df_20.to_csv("Data_Set_2_20.csv", index=False)
+    df_80.to_csv("Data_Set_2_80.csv", index=False)
+
+
+
+
+
+def u_middle_name(a, b):
+    operation = random.choice(["+", "-", "*"])
+    if operation == "+":
+        return a + b
+    elif operation == "-":
+        return a - b
+    else:  # Multiplication
+        return a * b
+
+def u_middlename(user_df, middle_name_value, original_value):
+
+    user_df["middle_name"] = middle_name_value
+    user_df["Original"] = original_value
+    return user_df
+
 
 
 if __name__ == "__main__":
 
     num_of_records = int(input("Enter the number of records to generate: "))
-    print_user_data(num_of_records)
-    mdm_split_data_set(num_of_records)
-
-
-
-
-
-
-
-
+    show_output = "Y"
+    # print_user_data(num_of_records)
+    mdm_split_data_set(num_of_records, show_output)
 
 
 # def generate_address_variations(base_address):
