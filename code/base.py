@@ -4,9 +4,6 @@ import pandas as pd
 
 fake = Faker()
 
-def main():
-    pass
-
 
 def generate_user_data(num_of_records: int) -> pd.DataFrame:
     
