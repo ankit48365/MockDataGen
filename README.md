@@ -6,6 +6,10 @@ Code to generate synthetic Customer data, usefull to feed into a MDM system for 
 
 ![The Idea!!](diagram/version1.png "Data Flow Overview")
 
+<h4>Draw Project Directory</h4>
+
+tree /F /A > tree_output.txt
+
 
 The Faker library provides a wide range of attributes for generating synthetic data. Here are some commonly used ones:
 Personal Information
