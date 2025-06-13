@@ -8,9 +8,11 @@ Code to generate synthetic Customer data, usefull to feed into a MDM system for 
 
 <h4>Draw Project Directory</h4>
 
-tree /F /A > tree_output.txt
+```tree /F /A > tree_output.txt```
 
+<h4>Faker Package - Attributes</h4>
 
+```
 The Faker library provides a wide range of attributes for generating synthetic data. Here are some commonly used ones:
 Personal Information
 - fake.name() – Full name
@@ -49,3 +51,4 @@ Miscellaneous
 - fake.uuid4() – Unique identifier (UUID)
 
 You can explore more attributes in the official Faker documentation or GeeksforGeeks guide. Let me know if you need specific examples!
+```
