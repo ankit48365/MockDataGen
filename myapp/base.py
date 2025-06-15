@@ -121,6 +121,11 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
 
             new_row["phone"] = random.choice([new_row["phone"], "", fake.phone_number()])
             new_row["email"] = random.choice([new_row["email"], "", fake.email()])
+            new_row["city"] = random.choice([new_row["city"], ""])
+            new_row["state"] = random.choice([new_row["state"], "", fake.state()])
+            new_row["zip_code"] = random.choice([new_row["zip_code"], ""])
+
+
             # Address string modifications
             if "Apt." in new_row["address"]:
                 new_row["address"] = random.choice([new_row["address"].replace("Apt.", "APT"), new_row["address"].replace("Apt.", "#"), new_row["address"].replace("Apt.", "Apartment")])
@@ -134,21 +139,21 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
                 new_row["address"] = random.choice([new_row["address"].replace("Drives", "Dr."), new_row["address"].replace("Drives", "Drive")])    
 
             df_20p = pd.concat([df_20p, pd.DataFrame([new_row])], ignore_index=True)
+            # print(df_20p.shape[0])
+        
+    return df_20p
 
-            return df_20p
 
+def main(num_of_records: int, show_output: str) -> None:
 
-def main():
-    num_of_records = int(input("Enter the number of records to generate: "))
-    show_output = input("Do you want to print the output? (Y/N): ").strip().upper()
 
     ##############################################################################################
     # Step 1 - Generate user data
-    print("\n####################################### STEP 1 ######################################\n")
+    print("\n####################################### STEP 1 - GENERATE FULL SET ######################################\n")
     user_df = generate_user_data(num_of_records)
-    user_df.to_csv("Data_Set_1_100.csv", index=False)
+    user_df.to_csv("Data_Set_1_FULL.csv", index=False)
     user_df_num_records = user_df.shape[0]
-    print(f"Number of records Full Data Set: {user_df_num_records} & Unique records as {user_df.drop_duplicates().shape[0]}, saved here {"Data_Set_1_100.csv"}")
+    print(f"Number of records Full Data Set: {user_df_num_records} & Unique records as {user_df.drop_duplicates().shape[0]}, saved here {"Data_Set_1_FULL.csv"}")
 
     if show_output == "Y":
         print(tabulate(user_df, headers='keys', tablefmt='psql', showindex=False)) # grid
@@ -157,7 +162,7 @@ def main():
     
     ###############################################################################################
     # Step 2 - Split dataset in two data set 20 & 80
-    print("\n####################################### STEP 2 #######################################\n")
+    print("\n####################################### STEP 2 - SPLIT 80:20 RATIO ######################################\n")
     df_20, df_80 = mdm_split_data_set(user_df)
     df_20.to_csv("Data_Set_2_20_Unique.csv", index=False)
     df_80.to_csv("Data_Set_2_80_Unique.csv", index=False)
@@ -168,7 +173,7 @@ def main():
 
     ###############################################################################################
     # Step 3 - Create Data Set 20 with bad data added (it will have more then 20% of data)
-    print("\n####################################### STEP 3 #######################################\n")
+    print("\n####################################### STEP 3 - ADD ITERATED REC. IN 20 SET #############################\n")
     df_20p = change_df_20(df_20)
     df_20p.to_csv("Data_Set_2_20_modified.csv", index=False)
     df_20p_num_records = df_20p.shape[0]
@@ -179,8 +184,28 @@ def main():
     else:
         print("Data not printed, only saved to CSV.")
 
+    ###############################################################################################
+    # Step 4 - Merge the two data sets {Data_Set_2_20_Unique.csv, Data_Set_2_80_Unique.csv} to use as Load 1 
+    print("\n####################################### STEP 4 - CREATE LOAD 1 SET #######################################\n")
+    load_good_df = pd.concat([df_20, df_80], ignore_index=True)
+    load_good_df.to_csv("Data_Set_3_LOAD1.csv", index=False)
+    load_good_num_records = load_good_df.shape[0]
+    print(f"Number of records in Data Set 3 (80+20, load1) set: {load_good_num_records}, saved here {"Data_Set_3_LOAD1.csv"}, use them as preferred records\n")
+
+    ###############################################################################################
+    # Step 5 - Data set of only Original = N records in Data_Set_2_20_modified.csv to use as Load 2
+    print("\n####################################### STEP 5 - CREATE LOAD 2 SET #######################################\n")
+
+    load_later_df = df_20p[df_20p["Original"] == "N"].copy()
+    load_later_df.to_csv("Data_Set_3_LOAD2.csv", index=False)
+    load_later_num_records = load_later_df.shape[0]
+    print(f"Number of records in Data Set 3 (new iterations load2) set: {load_later_num_records}, saved here {"Data_Set_3_LOAD2.csv"}, use them as questionable records\n")
+
+
 if __name__ == "__main__":
-    main()
+    num_of_records = int(input("Enter the number of records to generate: "))
+    show_output = input("Do you want to print the output? (Y/N): ").strip().upper()
+    main(num_of_records, show_output)
 
     # num_of_records = int(input("Enter the number of records to generate: "))
     # show_output = "N"

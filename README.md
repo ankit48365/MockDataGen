@@ -2,6 +2,12 @@
 
 Code to generate synthetic Customer data, usefull to feed into a MDM system for validation.
 
+## Release history
+
+```
+Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --print N }
+```
+
 <h4>High Level Conceptual Data Flow Diagram:</h4>
 
 ![The Idea!!](diagram/version1.png "Data Flow Overview")
