@@ -1,6 +1,6 @@
 [project]
 name = "mockdatagen"
-version = "1.0.0"
+version = "1.1.0"
 description = "Generate Synthetic Data for MDM use case"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -17,7 +17,7 @@ dependencies = [
 
 [tool.poetry]
 name = "mockdatagen"
-version = "1.0.0"
+version = "1.1.0"
 description = "Generate Synthetic Data for MDM use case"
 authors = ["ankit <ankit48365@gmail.com>"]
 license = "MIT"

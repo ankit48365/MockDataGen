@@ -2,7 +2,7 @@ from .base import main as gen_mdm_data  # local run change .base to base only an
 import argparse
 import sys
 # Hardcoded version information
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 # Hardcoded usage information
 EXAMPLE = """
