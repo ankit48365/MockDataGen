@@ -1,6 +1,7 @@
 ![Latest Release](https://img.shields.io/badge/release-v1.0.0-blue)
 [![Upload Python Package](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
-![Coverage](https://github.com/ankit48365/MockDataGen/actions/workflows/Test-Coverage.yml/badge.svg)
+![coverage](coverage.svg)
+
 
 # Mock Data Gen
 
