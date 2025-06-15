@@ -3,10 +3,12 @@ name: Code Quality and Test Coverage
 on:
   push:
     branches:
-      - dev, main
+      - dev
+      - main
   pull_request:
     branches:
-      - dev, main
+      - dev
+      - main
 
 jobs:
   test:
