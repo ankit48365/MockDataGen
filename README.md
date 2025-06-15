@@ -1,12 +1,27 @@
+![Latest Release](https://img.shields.io/badge/release-v1.0.0-blue)
+[![Upload Python Package](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
+
 # Mock Data Gen
 
-Code to generate synthetic Customer data, usefull to feed into a MDM system for validation.
+Code to generate synthetic Customer data, usefull to feed into a MDM system for test & validation.
+
+## Release history
+
+```
+Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --print N }
+```
 
 <h4>High Level Conceptual Data Flow Diagram:</h4>
 
 ![The Idea!!](diagram/version1.png "Data Flow Overview")
 
+<h4>Draw Project Directory</h4>
 
+```tree /F /A > tree_output.txt```
+
+<h4>Faker Package - Attributes</h4>
+
+```
 The Faker library provides a wide range of attributes for generating synthetic data. Here are some commonly used ones:
 Personal Information
 - fake.name() – Full name
@@ -45,3 +60,4 @@ Miscellaneous
 - fake.uuid4() – Unique identifier (UUID)
 
 You can explore more attributes in the official Faker documentation or GeeksforGeeks guide. Let me know if you need specific examples!
+```

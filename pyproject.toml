@@ -1,11 +1,35 @@
 [project]
 name = "mockdatagen"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "Generate Synthetic Data for MDM use case"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.8"
 dependencies = [
     "faker>=37.4.0",
     "pandas>=2.3.0",
+    "poetry>=2.1.3",
     "tabulate>=0.9.0",
 ]
+
+[tool.poetry]
+name = "mockdatagen"
+version = "1.0.0"
+description = "Generate Synthetic Data for MDM use case"
+authors = ["ankit <ankit48365@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+packages = [{ include = "myapp" }]
+
+[tool.poetry.dependencies]
+faker="^37.4.0"
+pandas="^2.3.0"
+poetry="^2.1.3"
+tabulate="^0.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+mockdatagen = "myapp.cli:main"
