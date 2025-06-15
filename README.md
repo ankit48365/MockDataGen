@@ -21,13 +21,20 @@ Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --
 
 ```tree /F /A > tree_output.txt```
 
-<h4>Pytest Testing and Coverage</h4>
+<h4>Pytest Testing and Coverage Report (HTML)</h4>
 
 html content generated in htmlcov dir
 ```
 uv run pytest ./tests/test_base.py
 uv run pytest --cov=myap
 uv run pytest --cov=myapp --cov-report=html
+```
+<h4>Coverage Badge</h4>
+
+creates coverage.svg and coverage.xml in root directory
+```
+uv run pytest --cov=myapp --cov-report=xml
+uv run coverage-badge -o coverage.svg -f
 ```
 
 
