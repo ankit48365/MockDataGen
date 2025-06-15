@@ -58,6 +58,8 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     "Edward": "Ed",
     "Elizabeth": "Liz",
     "Emily": "Em",
+    "Frederick": "Fred",
+    "Gabriel": "Gabe",
     "Gregory": "Greg",
     "Jacqueline": "Jackie",
     "James": "Jim",
@@ -70,16 +72,20 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     "Karen": "Kare",
     "Katherine": "Kate",
     "Kenneth": "Ken",
-    "Kimberly": "Kim",   
     "Kevin": "Kev",
+    "Kimberly": "Kim",
+    "Kristopher": "Chris",  
     "Margaret": "Maggie",
     "Matthew": "Matt",
+    "Melissa": "Mel",
     "Michael": "Mike",
     "Nathan": "Nate",
     "Natalie": "Nat",
     "Nicholas": "Nick",
     "Olivia": "Liv",
     "Patricia": "Pat",
+    "Philip": "Phil",
+    "Rachel": "Rach",
     "Rebecca": "Becky",
     "Richard": "Rich",
     "Robert": "Rob",
@@ -87,6 +93,8 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     "Samantha": "Sam",
     "Sarah": "Sally",
     "Stephanie": "Steph",
+    "Taylor": "Tay",
+    "Thomas": "Tom",
     "Tiffany": "Tiff",
     "Theodore": "Theo",
     "Timothy": "Tim",
@@ -96,7 +104,7 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     }
 
     for index, row in original_rows.iterrows():
-        iterations = random.randint(0, 2)  # Randomly select 0, 1, or 2 iterations
+        iterations = random.randint(0, 3)  # Randomly select 0, 1, 2 or 3 iterations
         for _ in range(iterations):
             new_row = row.copy()  # Copy the current row directly
             new_row["Original"] = "N"  # Mark as modified
@@ -108,7 +116,7 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
                 new_row["middle_name"] = random.choice([name_map[new_row["middle_name"]], new_row["middle_name"], new_row["middle_name"][0]])
 
             new_row["phone"] = random.choice([new_row["phone"], "", fake.phone_number()])
-            new_row["email"] = random.choice([new_row["email"], "", fake.email()])
+            new_row["email"] = random.choice([new_row["email"], "", fake.email()]) + " "
             new_row["city"] = random.choice([new_row["city"], ""])
             new_row["state"] = random.choice([new_row["state"], "", fake.state()])
             new_row["zip_code"] = random.choice([new_row["zip_code"], ""])

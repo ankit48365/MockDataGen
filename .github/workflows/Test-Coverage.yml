@@ -1,8 +1,12 @@
-name: Test Coverage
+name: Code Quality and Test Coverage
 
 on:
-  workflow_dispatch:  # Manual trigger only
-
+  push:
+    branches:
+      - dev, main
+  pull_request:
+    branches:
+      - dev, main
 
 jobs:
   test:
@@ -17,16 +21,24 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Run pylint (non-blocking)
+        run: uv run pylint myapp || true  # Ensures pylint runs but does not fail the build
+
       - name: Run tests with coverage
-        run: uv run pytest --cov=myapp --cov-report=xml
+        run: uv run pytest --cov=myapp --cov-report=term --cov-fail-under=70  # Ensures coverage is >= 70% to pass  # --cov-report=term provides coverage report in the terminal
 
-      - name: Generate Coverage Badge
-        uses: tj-actions/coverage-badge-py@v1
-        with:
-          output: "coverage.svg"
+# Below if you want to generate coverage badge dynamically but it dosent work
 
-      - name: Upload Badge
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-badge
-          path: coverage.svg
+      # - name: Run tests with coverage
+      #   run: uv run pytest --cov=myapp --cov-report=xml
+
+      # - name: Generate Coverage Badge
+      #   uses: tj-actions/coverage-badge-py@v1
+      #   with:
+      #     output: "coverage.svg"
+
+      # - name: Upload Badge
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: coverage-badge
+      #     path: coverage.svg
