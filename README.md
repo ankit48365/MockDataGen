@@ -19,6 +19,10 @@ Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --
 Version 1.1.0 - Date 6/15/2025 { Added Unit test cases, Pylint for quality and github actions}
 ```
 
+<h4><a href="https://pypi.org/project/mockdatagen/">PyPi.org Link</a></h4>
+
+Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
+
 <h4>Update Badge</h4>
 
 Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
