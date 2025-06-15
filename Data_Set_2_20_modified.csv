@@ -1,8 +1,0 @@
-first_name,middle_name,last_name,address,city,state,zip_code,phone,email,Original
-Thomas,Matthew,Reeves,582 Cook Avenue,Hornmouth,Nevada,12700,7353893418,james26@example.net,Y
-Kayla,Isaiah,Holmes,65115 Ashley Stream,Port Bryan,Kansas,03553,667-819-7677x8696,nicholaswalker@example.com,Y
-Richard,Jason,Clark,8939 Robert Glen Suite 042,Steeleshire,Connecticut,66845,7773742043,loricrawford@example.com,Y
-Kayla,Isaiah,Holmes,65115 Ashley Stream,,Kansas,,667-819-7677x8696,nicholaswalker@example.com,N
-Kayla,Isaiah,Holmes,65115 Ashley Stream,Port Bryan,,,431.534.6471,,N
-Rich,Jason,Clark,8939 Robert Glen STE 042,,,,+1-685-537-1744x02711,,N
-Richard,Jason,Clark,8939 Robert Glen Suit 042,Steeleshire,,,7773742043,,N
