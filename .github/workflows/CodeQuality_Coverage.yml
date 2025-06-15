@@ -23,14 +23,26 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Run pylint (non-blocking)
-        run: uv run pylint myapp || true  # Ensures pylint runs but does not fail the build
+      - name: Run pylint
+        run: uv run pylint myapp > pylint_report.txt || true  # Ensures pylint runs but does not fail the build
 
-      - name: Run pylint and update badge
-        uses: Silleellie/pylint-github-action@v2.1
-        with:
-          lint-path: myapp  # Updated to match your project path
-          python-version: '3.11'
+      - name: Generate badge
+        run: |
+          SCORE=$(grep -oP 'rated at \K[0-9.]+' pylint_report.txt)
+          echo "![pylint](https://img.shields.io/badge/pylint-$SCORE-green)" > README.md
+
+      - name: Commit and push badge update
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update pylint badge"
+          git push
+
+
+
+
+
 
       - name: Run tests with coverage
         run: uv run pytest --cov=myapp --cov-report=term --cov-fail-under=70  # Ensures coverage is >= 70% to pass  # --cov-report=term provides coverage report in the terminal
