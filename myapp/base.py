@@ -3,9 +3,7 @@ from tabulate import tabulate
 import pandas as pd
 import random
 
-
 fake = Faker()
-
 def generate_user_data(num_of_records: int) -> pd.DataFrame:
     
     user_data = [{
@@ -22,25 +20,17 @@ def generate_user_data(num_of_records: int) -> pd.DataFrame:
     ]
 
     user_df = pd.DataFrame(user_data)
-    # print(f"Number of records in main set: {user_df.shape[0]}")
-    # print(f"Number of Unique Records in main set: {user_df.drop_duplicates().shape[0]}")
     user_df["Original"] = "Y" # Mark original records, this helps us later to identify the original records
 
     return user_df
 
-
-# def mdm_split_data_set(records_to_process: int, show_output: str, user_df ) -> tuple[pd.DataFrame, pd.DataFrame]:
 def mdm_split_data_set(user_df) -> tuple[pd.DataFrame, pd.DataFrame]:
 
-    # user_df = generate_user_data(records_to_process)
     df_20 = user_df.sample(frac=0.2, random_state=42)  # Pick 20% randomly
     df_80 = user_df.drop(df_20.index)  # Remaining 80%  , droping the one used in df_20
     return df_20, df_80
 
 def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
-# def change_df_20(records_to_process: int, show_output: str) -> pd.DataFrame:
-    # df_20,df20_num_records = mdm_split_data_set(records_to_process, show_output)
-    # print(f"Number of records in 20 set: {df20_num_records}")
 
     # Store original rows to avoid index issues when DataFrame grows
     original_rows = df_20p.copy()
@@ -68,6 +58,8 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     "Edward": "Ed",
     "Elizabeth": "Liz",
     "Emily": "Em",
+    "Frederick": "Fred",
+    "Gabriel": "Gabe",
     "Gregory": "Greg",
     "Jacqueline": "Jackie",
     "James": "Jim",
@@ -80,16 +72,20 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     "Karen": "Kare",
     "Katherine": "Kate",
     "Kenneth": "Ken",
-    "Kimberly": "Kim",   
     "Kevin": "Kev",
+    "Kimberly": "Kim",
+    "Kristopher": "Chris",  
     "Margaret": "Maggie",
     "Matthew": "Matt",
+    "Melissa": "Mel",
     "Michael": "Mike",
     "Nathan": "Nate",
     "Natalie": "Nat",
     "Nicholas": "Nick",
     "Olivia": "Liv",
     "Patricia": "Pat",
+    "Philip": "Phil",
+    "Rachel": "Rach",
     "Rebecca": "Becky",
     "Richard": "Rich",
     "Robert": "Rob",
@@ -97,6 +93,8 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     "Samantha": "Sam",
     "Sarah": "Sally",
     "Stephanie": "Steph",
+    "Taylor": "Tay",
+    "Thomas": "Tom",
     "Tiffany": "Tiff",
     "Theodore": "Theo",
     "Timothy": "Tim",
@@ -106,10 +104,9 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
     }
 
     for index, row in original_rows.iterrows():
-        iterations = random.randint(0, 2)  # Randomly select 0, 1, or 2 iterations
+        iterations = random.randint(0, 3)  # Randomly select 0, 1, 2 or 3 iterations
         for _ in range(iterations):
             new_row = row.copy()  # Copy the current row directly
-            # want to update the middle_name field and original field to value blank
             new_row["Original"] = "N"  # Mark as modified
 
             if new_row["first_name"] in name_map:
@@ -118,13 +115,11 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
             if new_row["middle_name"] in name_map:
                 new_row["middle_name"] = random.choice([name_map[new_row["middle_name"]], new_row["middle_name"], new_row["middle_name"][0]])
 
-
             new_row["phone"] = random.choice([new_row["phone"], "", fake.phone_number()])
-            new_row["email"] = random.choice([new_row["email"], "", fake.email()])
+            new_row["email"] = random.choice([new_row["email"], "", fake.email()]) + " "
             new_row["city"] = random.choice([new_row["city"], ""])
             new_row["state"] = random.choice([new_row["state"], "", fake.state()])
             new_row["zip_code"] = random.choice([new_row["zip_code"], ""])
-
 
             # Address string modifications
             if "Apt." in new_row["address"]:
@@ -142,7 +137,6 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
             # print(df_20p.shape[0])
         
     return df_20p
-
 
 def main(num_of_records: int, show_output: str) -> None:
 
@@ -206,9 +200,3 @@ if __name__ == "__main__":
     num_of_records = int(input("Enter the number of records to generate: "))
     show_output = input("Do you want to print the output? (Y/N): ").strip().upper()
     main(num_of_records, show_output)
-
-    # num_of_records = int(input("Enter the number of records to generate: "))
-    # show_output = "N"
-    # # print_user_data(num_of_records)
-    # change_df_20(num_of_records, show_output)
-

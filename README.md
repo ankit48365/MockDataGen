@@ -1,15 +1,31 @@
-![Latest Release](https://img.shields.io/badge/release-v1.0.0-blue)
-[![Upload Python Package](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
+![coverage](https://img.shields.io/badge/coverage-72.64%25-blue)
+![pylint](https://img.shields.io/badge/pylint-5.66-green)
+![Latest Release](https://img.shields.io/badge/release-v1.1.0-blue)
+[![PyPi Deployment](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
 
-# Mock Data Gen
+<h4>Description</h4>
 
 Code to generate synthetic Customer data, usefull to feed into a MDM system for test & validation.
 
-## Release history
+<h4>Usage</h4>
+
+```
+mockdatagen --help
+mockdatagen --number 10 --print N {generate 10 records and dont print on screen}
+```
+
+<h4>Release history</h4>
 
 ```
 Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --print N }
+Version 1.1.0 - Date 6/15/2025 { Added Unit test cases, Pylint for quality and github actions}
 ```
+
+<h4><a href="https://pypi.org/project/mockdatagen/">PyPi.org Link</a></h4>
+
+<h4>Update Badge</h4>
+
+Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
 
 <h4>High Level Conceptual Data Flow Diagram:</h4>
 
