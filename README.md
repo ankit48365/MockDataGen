@@ -1,6 +1,15 @@
+![Latest Release](https://img.shields.io/badge/release-v1.0.0-blue)
+[![Upload Python Package](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
+
 # Mock Data Gen
 
-Code to generate synthetic Customer data, usefull to feed into a MDM system for validation.
+Code to generate synthetic Customer data, usefull to feed into a MDM system for test & validation.
+
+## Release history
+
+```
+Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --print N }
+```
 
 <h4>High Level Conceptual Data Flow Diagram:</h4>
 
