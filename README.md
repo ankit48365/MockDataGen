@@ -31,6 +31,10 @@ Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
 
 ![The Idea!!](diagram/version1.png "Data Flow Overview")
 
+<h4>Test Coverage Details:</h4>
+
+[View Coverage Report](htmlcov/function_index.html)
+
 <h4>Draw Project Directory</h4>
 
 ```tree /F /A > tree_output.txt```
