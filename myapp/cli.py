@@ -2,11 +2,13 @@ from .base import main as gen_mdm_data  # local run change .base to base only an
 import argparse
 import sys
 # Hardcoded version information
-VERSION = "0.0.3"
+VERSION = "1.0.0"
 
 # Hardcoded usage information
 EXAMPLE = """
-TBD
+From CLI you can run the following command to generate mock data: Print Y/N for selecting user preference to print results on screen.
+Example:
+mockdatagen --number 10 --print N
 """
 
 def main():
