@@ -8,10 +8,12 @@
 Code to generate synthetic Customer data, usefull to feed into a MDM system for test & validation.
 
 <h4>Usage</h4>
+
 ```
 mockdatagen --help
 mockdatagen --number 10 --print N {generate 10 records and dont print on screen}
 ```
+
 <h4>Release history</h4>
 
 ```
@@ -20,8 +22,6 @@ Version 1.1.0 - Date 6/15/2025 { Added Unit test cases, Pylint for quality and g
 ```
 
 <h4><a href="https://pypi.org/project/mockdatagen/">PyPi.org Link</a></h4>
-
-Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
 
 <h4>Update Badge</h4>
 
