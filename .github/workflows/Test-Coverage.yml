@@ -28,7 +28,7 @@ jobs:
           output: "coverage.svg"
 
       - name: Upload Badge
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-badge
           path: coverage.svg
