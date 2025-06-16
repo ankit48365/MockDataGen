@@ -1,11 +1,23 @@
-![coverage](https://img.shields.io/badge/coverage-72.64%25-blue)
+![coverage](https://img.shields.io/badge/coverage-71.7%25-blue)
 ![pylint](https://img.shields.io/badge/pylint-5.66-green)
 ![Latest Release](https://img.shields.io/badge/release-v1.1.0-blue)
 [![PyPi Deployment](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
 
 <h4>Description</h4>
 
-Code to generate synthetic Customer data, usefull to feed into a MDM system for test & validation.
+This Python project provides a robust solution for generating synthetic datasets tailored for Master Data Management (MDM) testing and data integration projects. 
+
+<ul>
+  <li>User can run a simple command from CLI to determine the size of the test datasetBy taking user input to determine dataset size</li>
+  <li>We then Split the Data set into two subset in 20 & 80 Ratio, we leave the 80% Dataset untouched</li>
+  <li>We then take the 20% dataset, randonly pick records and make familair edits (Jennifer replaced by Jenn or David by Dave, Street by ST, Avenue by Ave. or Apartment by Apt. or #)</li>
+  <li>When we edit and add such altered records to the 20% set , we have carefully marked Original records with the use of Indicator</li>
+  <li>In the end we have several Dataset, BUt user is presentes with two main Dataset {Data_Set_3_LOAD1.csv} will be good trusted records and {Data_Set_3_LOAD2.csv} with mixed corrupted data
+</ul>
+
+In the end we have a realistic test bed for assessing record matching, data cleansing, and standardization workflows. The ability to test how systems handle inconsistencies and merge similar records is invaluable for improving data quality, ensuring seamless integration, and refining entity resolution processes. This tool is especially beneficial for evaluating record matching algorithms and validating data governance strategies in enterprise environments.
+
+![SampleOutputScreen](diagram/image.png "Sample Output for user input of --number 20")
 
 <h4>Usage</h4>
 
@@ -13,6 +25,10 @@ Code to generate synthetic Customer data, usefull to feed into a MDM system for 
 mockdatagen --help
 mockdatagen --number 10 --print N {generate 10 records and dont print on screen}
 ```
+
+<h4>High Level Conceptual Data Flow Diagram:</h4>
+
+![The Idea!!](diagram/version1.png "Data Flow Overview")
 
 <h4>Release history</h4>
 
@@ -23,61 +39,14 @@ Version 1.1.0 - Date 6/15/2025 { Added Unit test cases, Pylint for quality and g
 
 <h4><a href="https://pypi.org/project/mockdatagen/">PyPi.org Link</a></h4>
 
-<h4>Update Badge</h4>
+<h4>======== Developers Notes =========</h4>
+
+<h4>Update Pylint & Coverage Badge</h4>
 
 Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
 
-<h4>High Level Conceptual Data Flow Diagram:</h4>
-
-![The Idea!!](diagram/version1.png "Data Flow Overview")
-
-<h4>Test Coverage Details:</h4>
-
-[View Coverage Report](htmlcov/function_index.html)
-
-<h4>Draw Project Directory</h4>
-
-```tree /F /A > tree_output.txt```
-
-<h4>Faker Package - Attributes</h4>
+<h4> Tree </h4>
 
 ```
-The Faker library provides a wide range of attributes for generating synthetic data. Here are some commonly used ones:
-Personal Information
-- fake.name() – Full name
-- fake.first_name() – First name
-- fake.last_name() – Last name
-- fake.prefix() – Name prefix (e.g., Mr., Ms.)
-- fake.suffix() – Name suffix (e.g., Jr., Sr.)
-
-Address Details
-- fake.address() – Full address (street, city, state, ZIP)
-- fake.street_address() – Street address
-- fake.city() – City name
-- fake.state() – State name
-- fake.zipcode() – ZIP code
-- fake.country() – Country name
-- fake.latitude() – Latitude coordinate
-- fake.longitude() – Longitude coordinate
-
-Contact Information
-- fake.phone_number() – Phone number
-- fake.email() – Email address
-- fake.domain_name() – Domain name
-- fake.url() – Website URL
-
-Business & Finance
-- fake.company() – Company name
-- fake.job() – Job title
-- fake.credit_card_number() – Credit card number
-- fake.currency_code() – Currency code (e.g., USD, EUR)
-
-Miscellaneous
-- fake.date_of_birth() – Random date of birth
-- fake.ssn() – Social Security Number
-- fake.ipv4() – IPv4 address
-- fake.ipv6() – IPv6 address
-- fake.uuid4() – Unique identifier (UUID)
-
-You can explore more attributes in the official Faker documentation or GeeksforGeeks guide. Let me know if you need specific examples!
+tree /F /A > tree_output.txt
 ```
