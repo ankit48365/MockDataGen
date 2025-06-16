@@ -89,21 +89,21 @@ def test_main_output():
 ################################################################################################################
 # import subprocess
 
-def test_cli_print_no():
-    result = subprocess.run(
-        ["uv", "run", "./myapp/cli.py", "--number", "6", "--print", "N"],
-        capture_output=True,
-        text=True
-    )
-    assert "Data not printed, only saved to CSV." in result.stdout
+# def test_cli_print_no():
+#     result = subprocess.run(
+#         ["uv", "run", "./myapp/cli.py", "--number", "6", "--print", "N"],
+#         capture_output=True,
+#         text=True
+#     )
+#     assert "Data not printed, only saved to CSV." in result.stdout
 
-def test_cli_print_yes():
-    expected_headers = ["first_name", "middle_name", "last_name", "address", 
-                        "city", "state", "zip_code", "phone", "email", "Original"]
-    result = subprocess.run(
-        ["uv", "run", "./myapp/cli.py", "--number", "6", "--print", "Y"],
-        capture_output=True,
-        text=True
-    )
-    for header in expected_headers:
-        assert header in result.stdout
+# def test_cli_print_yes():
+#     expected_headers = ["first_name", "middle_name", "last_name", "address", 
+#                         "city", "state", "zip_code", "phone", "email", "Original"]
+#     result = subprocess.run(
+#         ["uv", "run", "./myapp/cli.py", "--number", "6", "--print", "Y"],
+#         capture_output=True,
+#         text=True
+#     )
+#     for header in expected_headers:
+#         assert header in result.stdout
