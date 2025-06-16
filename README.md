@@ -12,7 +12,7 @@ This Python project provides a robust solution for generating synthetic datasets
   <li>We then Split the Data set into two subset in 20 & 80 Ratio, we leave the 80% Dataset untouched</li>
   <li>We then take the 20% dataset, randonly pick records and make familair edits (Jennifer replaced by Jenn or David by Dave, Street by ST, Avenue by Ave. or Apartment by Apt. or #)</li>
   <li>When we edit and add such altered records to the 20% set , we have carefully marked Original records with the use of Indicator</li>
-  <li>In the end we have several Dataset, BUt user is presentes with two main Dataset {Data_Set_3_LOAD1.csv} will be good trusted records and {Data_Set_3_LOAD2.csv} with mixed corrupted data
+  <li>In the end we have several Dataset, BUt user is presentes with two main Dataset {Data_Set_3_LOAD1.csv} will be good trusted records and {Data_Set_3_LOAD2.csv} with mixed corrupted data </li>
 </ul>
 
 In the end we have a realistic test bed for assessing record matching, data cleansing, and standardization workflows. The ability to test how systems handle inconsistencies and merge similar records is invaluable for improving data quality, ensuring seamless integration, and refining entity resolution processes. This tool is especially beneficial for evaluating record matching algorithms and validating data governance strategies in enterprise environments.
@@ -21,10 +21,12 @@ In the end we have a realistic test bed for assessing record matching, data clea
 
 <h4>Usage</h4>
 
-```
-mockdatagen --help
-mockdatagen --number 10 --print N {generate 10 records and dont print on screen}
-```
+Help Options :
+<em>mockdatagen --help </em>
+
+CLI Command to generate 10 records and opting for no records display on screen
+</em>mockdatagen --number 10 --print N </em> 
+
 
 <h4>High Level Conceptual Data Flow Diagram:</h4>
 
@@ -32,10 +34,9 @@ mockdatagen --number 10 --print N {generate 10 records and dont print on screen}
 
 <h4>Release history</h4>
 
-```
-Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --print N }
-Version 1.1.0 - Date 6/15/2025 { Added Unit test cases, Pylint for quality and github actions}
-```
+<li>Version 1.0.0 - Date 6/14/2025 { Run CLI Command like mockdatagen --number 10 --print N } </li>
+<li>Version 1.1.0 - Date 6/15/2025 { Added Unit test cases, Pylint for quality and github actions} </li>
+
 
 <h4><a href="https://pypi.org/project/mockdatagen/">PyPi.org Link</a></h4>
 
@@ -47,6 +48,4 @@ Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
 
 <h4> Tree </h4>
 
-```
 tree /F /A > tree_output.txt
-```
