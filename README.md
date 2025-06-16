@@ -17,15 +17,15 @@ This Python project provides a robust solution for generating synthetic datasets
 
 In the end we have a realistic test bed for assessing record matching, data cleansing, and standardization workflows. The ability to test how systems handle inconsistencies and merge similar records is invaluable for improving data quality, ensuring seamless integration, and refining entity resolution processes. This tool is especially beneficial for evaluating record matching algorithms and validating data governance strategies in enterprise environments.
 
-![SampleOutputScreen](diagram/image.png "Sample Output for user input of --number 20")
-
 <h4>Usage</h4>
 
 Help Options :
 <em>mockdatagen --help </em>
 
-CLI Command to generate 10 records and opting for no records display on screen
-</em>mockdatagen --number 10 --print N </em> 
+Generate 10 records with no display on screen :
+<em>mockdatagen --number 10 --print N </em> 
+
+![SampleOutputScreen](diagram/image.png "Sample Output for user input of --number 20")
 
 
 <h4>High Level Conceptual Data Flow Diagram:</h4>
@@ -38,7 +38,7 @@ CLI Command to generate 10 records and opting for no records display on screen
 <li>Version 1.1.0 - Date 6/15/2025 { Added Unit test cases, Pylint for quality and github actions} </li>
 
 
-<h4><a href="https://pypi.org/project/mockdatagen/">PyPi.org Link</a></h4>
+<h4><a href="https://pypi.org/project/mockdatagen/">pypi.org Web Portal URL</a></h4>
 
 <h4>======== Developers Notes =========</h4>
 
