@@ -1,5 +1,5 @@
-![coverage](https://img.shields.io/badge/coverage-71.7%25-blue)
-![pylint](https://img.shields.io/badge/pylint-5.66-green)
+![coverage](https://img.shields.io/badge/coverage-72.22%25-blue)
+![pylint](https://img.shields.io/badge/pylint-7.04-green)
 ![Latest Release](https://img.shields.io/badge/release-v1.1.0-blue)
 [![PyPi Deployment](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
 
@@ -49,6 +49,9 @@ Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
 
 tree /F /A > tree_output.txt
 
+<h4> pylint local run </h4>
+
+<em>uv run pylint myapp > pylint_report.txt || true</em>
 
 <h5><a href="https://profile.dataguruankit.com/Portfolio.html">Back to Portfolio!</a></h5>
 
