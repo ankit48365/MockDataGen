@@ -12,7 +12,7 @@ This Python project provides a robust solution for generating synthetic datasets
   <li>We then Split the Data set into two subset in 20 & 80 Weight Ratio, we leave the 80% Dataset untouched</li>
   <li>We then take the 20% dataset, randonly pick records and make familair edits (Jennifer replaced by Jenn or David by Dave, Street by ST, Avenue by Ave. or Apartment by Apt. or #)</li>
   <li>When we edit and add such altered records to the 20% set, we have carefully marked Original records with the use of Indicator. This helps in Later Validations.</li>
-  <li>In the end we have several Dataset, But user is presented with two main <em>Dataset {Data_Set_3_LOAD1.csv}</em>em> will be good trusted records and <em>Dataset {Data_Set_3_LOAD2.csv}</em> with mixed corrupted data </li>
+  <li>In the end we have several Dataset, But user is presented with two main <em>Dataset {Data_Set_3_LOAD1.csv}</em> will be good trusted records and <em>Dataset {Data_Set_3_LOAD2.csv}</em> with mixed corrupted data </li>
 </ul>
 
 In the end we have a realistic test bed for assessing record matching, data cleansing, and standardization workflows. The ability to test how systems handle inconsistencies and merge similar records (MDM use case) is invaluable for improving data quality, ensuring seamless integration, and refining entity resolution processes. This tool is especially beneficial for evaluating record matching algorithms and validating data governance strategies in enterprise environments.
