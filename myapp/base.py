@@ -33,10 +33,10 @@ def mdm_split_data_set(user_df) -> tuple[pd.DataFrame, pd.DataFrame]:
     df_80 = user_df.drop(df_20.index)  # Remaining 80%  , droping the one used in df_20
     return df_20, df_80
 
-def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
+def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame: 
     """Modify the 20% DataFrame to add bad data."""
     # Store original rows to avoid index issues when DataFrame grows
-    original_rows = df_20p.copy()
+    original_rows = df_20p.copy() 
 
     name_map = {
     "Alexander": "Alex",
@@ -156,9 +156,9 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
                                                     new_row["address"].replace("Suite", "Suit")])
             if "Drives" in new_row["address"]:
                 new_row["address"] = random.choice([new_row["address"].replace("Drives", "Dr."),
-                                                    new_row["address"].replace("Drives", "Drive")])
+                                                    new_row["address"].replace("Drives", "Drive")])      
 
-            df_20p = pd.concat([df_20p, pd.DataFrame([new_row])], ignore_index=True)
+            df_20p = pd.concat([df_20p, pd.DataFrame([new_row])], ignore_index=True)      
             # print(df_20p.shape[0])
 
     return df_20p

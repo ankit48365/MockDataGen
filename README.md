@@ -1,5 +1,5 @@
-![coverage](https://img.shields.io/badge/coverage-73.15%25-blue)
-![pylint](https://img.shields.io/badge/pylint-10.00-green)
+![coverage](https://img.shields.io/badge/coverage-71.3%25-blue)
+![pylint](https://img.shields.io/badge/pylint-9.63-green)
 ![Latest Release](https://img.shields.io/badge/release-v1.1.0-blue)
 [![PyPi Deployment](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
 
@@ -55,3 +55,5 @@ tree /F /A > tree_output.txt
 
 <h5><a href="https://profile.dataguruankit.com/Portfolio.html">Back to Portfolio!</a></h5>
 
+
+Nishtha think, thisd ios wrong
