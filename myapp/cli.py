@@ -1,6 +1,9 @@
-from .base import main as gen_mdm_data  # local run change .base to base only and then run > uv run .\myapp\cli.py --number 10 --print N
+"""CLI for MockDataGen application."""
 import argparse
 import sys
+# local run change .base to base only
+# and then run > uv run .\myapp\cli.py --number 10 --print N
+from .base import main as gen_mdm_data
 # Hardcoded version information
 VERSION = "1.1.0"
 
@@ -12,13 +15,13 @@ mockdatagen --number 10 --print N
 """
 
 def main():
+    """Start the CLI application and handle user input."""
     print(">>> ✅ MockDataGen CLI loaded")
     parser = argparse.ArgumentParser(description='MockDataGen CLI Tool')
     parser.add_argument('--version', action='version', version=f'MockDataGen {VERSION}')
     parser.add_argument('--example', action='store_true', help='Show sample code syntax')
-    parser.add_argument('--number', type=int, help='input number of records to generate', default=20)
-    parser.add_argument('--print', type=str, help='Y/N for selecting user preferance to print results on screen', default='Y')
-   
+    parser.add_argument('--number', type=int, help='Number of records to generate', default=20)
+    parser.add_argument('--print', type=str, help='Y/N for print data', default='Y')
     args = parser.parse_args()
 
     if args.example:
@@ -28,8 +31,8 @@ def main():
     if args.number:
         if not args.print:
             print("--print option is required for --number option")
-            sys.exit(1) 
-        gen_mdm_data(args.number, args.print) 
+            sys.exit(1)
+        gen_mdm_data(args.number, args.print)
         sys.exit(0)
 
 if __name__ == '__main__':
