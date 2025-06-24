@@ -1,5 +1,5 @@
 ![coverage](https://img.shields.io/badge/coverage-72.22%25-blue)
-![pylint](https://img.shields.io/badge/pylint-9.81-green)
+![pylint](https://img.shields.io/badge/pylint-10.00-green)
 ![Latest Release](https://img.shields.io/badge/release-v1.1.0-blue)
 [![PyPi Deployment](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/ankit48365/MockDataGen/actions/workflows/pypi-publish.yml)
 
@@ -19,14 +19,13 @@ In the end we have a realistic test bed for assessing record matching, data clea
 
 <h4>Usage</h4>
 
-Help Options :
+<h4>Help Options :</h4>
 <em>mockdatagen --help </em>
 
-Generate 10 records with no display on screen :
+<h4>Generate 10 records with no display on screen :</h4>
 <em>mockdatagen --number 10 --print N </em> 
 
 ![SampleOutputScreen](diagram/image.png "Sample Output for user input of --number 20")
-
 
 <h4>High Level Conceptual Data Flow Diagram:</h4>
 
@@ -39,21 +38,18 @@ Generate 10 records with no display on screen :
 
 <h4><a href="https://pypi.org/project/mockdatagen/">pypi.org Web Portal URL</a></h4>
 
-<h4>======== Developers Notes =========</h4>
+<h4>======================= Developers Notes ======================</h4>
 
-<h4>Update Pylint & Coverage Badge</h4>
+<h4>Dynamic Update Pylint & Coverage Badge via shell script</h4>
 
-Dynamically update pylint and Test Coverage Badge - Run pylint_badge.sh
+<em>pylint_badge.sh</em>
 
 <h4> Tree </h4>
 
-tree /F /A > tree_output.txt
+<em>tree /F /A > tree_output.txt </em>
 
 <h4> pylint local run </h4>
 
 <em>uv run pylint myapp > pylint_report.txt || true</em>
 
 <h5><a href="https://profile.dataguruankit.com/Portfolio.html">Back to Portfolio!</a></h5>
-
-
-Nishtha think, thisd ios wrong

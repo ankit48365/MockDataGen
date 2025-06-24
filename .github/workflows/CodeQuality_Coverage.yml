@@ -5,6 +5,7 @@ on:
     branches:
       - dev
       - main
+      - 16-cleanupactionfixtestcases
   pull_request:
     branches:
       - dev
@@ -29,18 +30,3 @@ jobs:
       - name: Run tests with coverage
         run: uv run pytest --cov=myapp --cov-report=term --cov-fail-under=70  # Ensures coverage is >= 70% to pass  # --cov-report=term provides coverage report in the terminal
 
-# Below if you want to generate coverage badge dynamically but it dosent work
-
-      # - name: Run tests with coverage
-      #   run: uv run pytest --cov=myapp --cov-report=xml
-
-      # - name: Generate Coverage Badge
-      #   uses: tj-actions/coverage-badge-py@v1
-      #   with:
-      #     output: "coverage.svg"
-
-      # - name: Upload Badge
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: coverage-badge
-      #     path: coverage.svg

@@ -130,14 +130,6 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
                                               fake.state()])
             new_row["zip_code"] = random.choice([new_row["zip_code"], ""])
 
-        # try below to avoid pylint long line thing
-        # if "Apt." in new_row["address"]:
-        #     options = [
-        #         new_row["address"].replace("Apt.", "APT"),
-        #         new_row["address"].replace("Apt.", "#"),
-        #         new_row["address"].replace("Apt.", "Apartment")
-        #     ]
-        #     new_row["address"] = random.choice(options)
 
             # Address string modifications
             if "Apt." in new_row["address"]:
@@ -156,9 +148,9 @@ def change_df_20(df_20p: pd.DataFrame) -> pd.DataFrame:
                                                     new_row["address"].replace("Suite", "Suit")])
             if "Drives" in new_row["address"]:
                 new_row["address"] = random.choice([new_row["address"].replace("Drives", "Dr."),
-                                                    new_row["address"].replace("Drives", "Drive")]) 
+                                                    new_row["address"].replace("Drives", "Drive")])
 
-            df_20p = pd.concat([df_20p, pd.DataFrame([new_row])], ignore_index=True)      
+            df_20p = pd.concat([df_20p, pd.DataFrame([new_row])], ignore_index=True)
             # print(df_20p.shape[0])
 
     return df_20p

@@ -1,7 +1,4 @@
-************* Module myapp.base
-myapp\base.py:159:99: C0303: Trailing whitespace (trailing-whitespace)
-myapp\base.py:161:84: C0303: Trailing whitespace (trailing-whitespace)
 
-------------------------------------------------------------------
-Your code has been rated at 9.81/10 (previous run: 9.63/10, +0.19)
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.81/10, +0.19)
 
