@@ -76,9 +76,9 @@ def test_main_output():
 
     # Expected output fragments
     expected_strings = [
-        "Number of records in 80 set: 13, saved here Data_Set_2_80_Unique.csv",
-        "Number of records in 20 set: 3, saved here Data_Set_2_20_Unique.csv",
-        "Number of records in Data Set 3 (80+20, load1) set: 16, saved here Data_Set_3_LOAD1.csv, use them as preferred records",
+        "Records ~80 set: 13, saved~ Data_Set_2_80_Unique.csv",
+        "Records ~20 set: 3,  saved~ Data_Set_2_20_Unique.csv",
+        "(80+20, load 1), #ofrecords: 16, saved~ Data_Set_3_LOAD1.csv",
         "Data not printed, only saved to CSV."
     ]
 
