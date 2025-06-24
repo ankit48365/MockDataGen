@@ -77,7 +77,7 @@ def test_main_output():
     # Expected output fragments
     expected_strings = [
         "Records ~80 set: 13, saved~ Data_Set_2_80_Unique.csv",
-        "Records ~20 set: 3,  saved~ Data_Set_2_20_Unique.csv",
+        "Records ~20 set: 3, saved~ Data_Set_2_20_Unique.csv",
         "(80+20, load 1), #ofrecords: 16, saved~ Data_Set_3_LOAD1.csv",
         "Data not printed, only saved to CSV."
     ]
@@ -87,23 +87,3 @@ def test_main_output():
         assert expected in result.stdout, f"Missing expected output: {expected}"
 
 ################################################################################################################
-# import subprocess
-
-# def test_cli_print_no():
-#     result = subprocess.run(
-#         ["uv", "run", "./myapp/cli.py", "--number", "6", "--print", "N"],
-#         capture_output=True,
-#         text=True
-#     )
-#     assert "Data not printed, only saved to CSV." in result.stdout
-
-# def test_cli_print_yes():
-#     expected_headers = ["first_name", "middle_name", "last_name", "address", 
-#                         "city", "state", "zip_code", "phone", "email", "Original"]
-#     result = subprocess.run(
-#         ["uv", "run", "./myapp/cli.py", "--number", "6", "--print", "Y"],
-#         capture_output=True,
-#         text=True
-#     )
-#     for header in expected_headers:
-#         assert header in result.stdout
